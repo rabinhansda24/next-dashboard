@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 import calculateCounters from "@/utils/calculateCounters";
 import calculateTATStatusForTrips from "@/utils/calculateTATStatus";
+import handleSort from "@/utils/handleSort";
 
 import Loading from "./loading";
 
@@ -31,6 +32,12 @@ export default function Dashboard() {
   useEffect(() => {
     fetchTrips();
   }, []);
+
+  const handleSortClick = (key: string) => {
+    const direction = sortConfig.key === key && sortConfig.direction === "asc" ? "desc" : "asc";
+    setSortConfig({ key, direction });
+    setFilteredTrips(handleSort(filteredTrips, key, direction))
+  }
 
   if (loading) {
     return <Loading />;
@@ -61,15 +68,15 @@ export default function Dashboard() {
         <table className="min-wfull bg-white">
           <thead>
             <tr>
-              <th className="py-2 px-4 border-b">Trip id</th>
-              <th className="py-2 px-4 border-b">Transporter</th>
-              <th className="py-2 px-4 border-b">Source</th>
-              <th className="py-2 px-4 border-b">Destination</th>
-              <th className="py-2 px-4 border-b">Phone</th>
-              <th className="py-2 px-4 border-b">ETA</th>
-              <th className="py-2 px-4 border-b">Distance remaining</th>
-              <th className="py-2 px-4 border-b">trip status</th>
-              <th className="py-2 px-4 border-b">TAT status</th>
+              <th onClick={() => handleSortClick('tripId')} className="py-2 px-4 border-b">Trip id</th>
+              <th onClick={() => handleSortClick('transporter')} className="py-2 px-4 border-b">Transporter</th>
+              <th onClick={() => handleSortClick('source')} className="py-2 px-4 border-b">Source</th>
+              <th onClick={() => handleSortClick('dest')} className="py-2 px-4 border-b">Destination</th>
+              <th onClick={() => handleSortClick('phoneNumber')} className="py-2 px-4 border-b">Phone</th>
+              <th onClick={() => handleSortClick('etaDays')} className="py-2 px-4 border-b">ETA</th>
+              <th onClick={() => handleSortClick('distanceRemaining')} className="py-2 px-4 border-b">Distance remaining</th>
+              <th onClick={() => handleSortClick('currenStatus')} className="py-2 px-4 border-b">trip status</th>
+              <th onClick={() => handleSortClick('tatStatus')} className="py-2 px-4 border-b">TAT status</th>
             </tr>
           </thead>
           <tbody>
