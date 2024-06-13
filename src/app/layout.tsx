@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
-import Loading from "./Loading"; // Import the 'Loading' component from the appropriate file
+import Loading from "./loading"; // Import the 'Loading' component from the appropriate file
 
 const inter = Inter({ subsets: ["latin"] });
 

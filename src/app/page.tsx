@@ -5,8 +5,11 @@ import { useState, useEffect } from "react";
 import calculateCounters from "@/utils/calculateCounters";
 import calculateTATStatusForTrips from "@/utils/calculateTATStatus";
 
+import Loading from "./loading";
+
 
 export default function Dashboard() {
+  const [loading, setLoading] = useState(true);
   const [trips, setTrips] = useState<any[]>([]);
   const [filteredTrips, setFilteredTrips] = useState<any[]>([]);
   const [sortConfig, setSortConfig] = useState({ key: '', direction: "asc" });
@@ -21,12 +24,17 @@ export default function Dashboard() {
         setTrips(data.data)
         setFilteredTrips(filtered)
         setCounterValues(calculateCounters(data.data))
+        setLoading(false)
       }); 
   }
 
   useEffect(() => {
     fetchTrips();
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="container mx-auto my-4">
