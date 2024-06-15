@@ -26,3 +26,124 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Counter Box Styles */
+.counter-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.counter-box h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.counter-box p {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #ffffff;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+  vertical-align: middle; /* Ensure vertical alignment is middle */
+}
+
+.table th {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.table th.sortable:hover {
+  cursor: pointer;
+  color: #3b82f6;
+}
+
+.table td {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #111827;
+}
+
+/* Add Trip Button Styles */
+.add-trip-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-trip-button:hover {
+  background-color: #2563eb;
+}
+
+/* Status Badges */
+.status-delayed {
+  color: #f97316;
+  background-color: #ffedd5;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.status-booked {
+  color: #3b82f6;
+  background-color: #dbf0ff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.status-in-transit {
+  color: #f59e0b;
+  background-color: #fef3c7;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.status-reached {
+  color: #10b981;
+  background-color: #d1fae5;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.status-on-time {
+  color: #10b981;
+  background-color: #d1fae5;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.status-other {
+  color: #6b7280;
+  background-color: #f3f4f6;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
